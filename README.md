@@ -11,3 +11,7 @@ For example, if you give the following input (the first number is used to determ
 you will get this result:
 
 ![](example.png)
+
+# modification after fork
+
+Characters other than ' ' and '#' are supported

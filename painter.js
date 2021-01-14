@@ -42,13 +42,17 @@ function linkNode(cxt, x1, y1, x2, y2, rpx) {
 	}
 }
 
-function isDigit(x) {
-	if (x === '0' || x === '1' || x === '2' || x === '3' || x === '4'
-	|| x === '5' || x === '6' || x === '7' || x === '8' || x === '9') {
+function isSpecialChar(x) {
+	// if (x === '0' || x === '1' || x === '2' || x === '3' || x === '4'
+	// || x === '5' || x === '6' || x === '7' || x === '8' || x === '9') {
+	// 	return true;
+	// } else {
+	// 	return false;
+	// }
+	if(x === ' ' || x === '#'){
 		return true;
-	} else {
-		return false;
 	}
+	return false;
 }
 
 function build(tree, cxt, rpx, tpx, wpx) {
@@ -58,12 +62,12 @@ function build(tree, cxt, rpx, tpx, wpx) {
 		while (cur < len && tree.charAt(cur) === ' ') {
 			++cur;
 		}
-		if (isDigit(tree.charAt(cur))) {
+		if (!isSpecialChar(tree.charAt(cur))) {
 			var end = cur;
-			while (end < len && isDigit(tree.charAt(end))) {
+			while (end < len && !isSpecialChar(tree.charAt(end))) {
 				++end;
 			}
-			value = parseInt(tree.slice(cur, end));
+			value = tree.slice(cur, end);
 			cur = end;
 			var x = pxShift;
 			var y = layer * rpx + (layer - 1) * 2 * rpx;
