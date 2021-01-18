@@ -14,4 +14,15 @@ you will get this result:
 
 # modification after fork
 
-Characters other than ' ' and '#' are supported
+- Characters other than ' ' and '#' are supported
+
+> a b c # # d # # e f g # # h # # #
+
+![](example3.png)
+
+- You can change the background color of node
+
+> 11(black) 5(red) 1(black) # # 7(black) # 8(red) # # 14(black) # 15(red) # # 
+
+![](example2.png)
+
